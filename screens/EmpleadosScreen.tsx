@@ -18,6 +18,16 @@ export default function EmpleadosScreen() {
         //console.log(datos)
 
     }, [])
+
+    type empleado={
+      occupation: string,
+
+      name: {
+        first:string,  
+      },
+
+      images: { main: string}
+    }
     
 
   return (
@@ -25,7 +35,7 @@ export default function EmpleadosScreen() {
       <Text>EmpleadosScreen</Text>
       <FlatList
         data={datos}
-        renderItem={ ( {item} )=> (
+        renderItem={ ( {item}: {item: empleado} )=> (
             <View>
                 <Text>Nombre: {item.name.first}</Text>
                 <Text>Ocupacion: {item.occupation}</Text>
